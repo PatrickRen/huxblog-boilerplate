@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 
     //primary navigation slide-in effect
     if ($(window).width() > MQL) {
-        var headerHeight = $('.navbar-custom').height();
+        var headerHeight = $('header').height();
         $(window).on('scroll', {
                 previousTop: 0
             },
@@ -49,15 +49,12 @@ jQuery(document).ready(function($) {
                 //check if user is scrolling up
                 if (currentTop < this.previousTop) {
                     //if scrolling up...
-                    if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
-                        $('.navbar-custom').addClass('is-visible');
-                    } else {
-                        $('.navbar-custom').removeClass('is-visible is-fixed');
-                    }
+                    $('nav').fadeIn(100);
+                    if (currentTop > headerHeight) $('nav').addClass('bg-dark');
+                    else $('nav').removeClass('bg-dark')
                 } else {
                     //if scrolling down...
-                    $('.navbar-custom').removeClass('is-visible');
-                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
+                    if (currentTop > headerHeight) $('nav').fadeOut(100);
                 }
                 this.previousTop = currentTop;
             });

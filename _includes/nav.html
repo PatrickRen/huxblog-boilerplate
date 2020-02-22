@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <a class="navbar-brand text-white" href="{{ site.baseurl }}/">{{ site.title }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,18 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link text-white pull-right" href="#">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link text-white" href="{{ site.baseurl }}/">Home<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white pull-right" href="#">Features</a>
+
+            {% for page in site.pages %}{% if page.title %}
+            <li>
+                <a class="nav-link text-white" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white pull-right" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white pull-right disabled" href="#" tabindex="-1"
-                    aria-disabled="true">Disabled</a>
-            </li>
+            {% endif %}{% endfor %}
+
         </ul>
     </div>
 </nav>

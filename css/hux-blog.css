@@ -399,15 +399,15 @@ pre code {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 50px 0 100px 0;
+    padding: 100px 0 100px 0;
   }
 }
 .intro-header .site-heading {
-  padding: 20px 0 50px 0;
+  padding: 60px 0 50px 0;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading {
-    padding: 50px 0 100px 0;
+    padding: 100px 0 100px 0;
   }
 }
 .intro-header .site-heading,
