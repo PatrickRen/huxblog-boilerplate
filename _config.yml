@@ -15,7 +15,6 @@ RSS: false
 weibo_username:     u/2927398893
 zhihu_username:     false
 github_username:    patrickren
-#twitter_username:  huxpro
 facebook_username:  patrick.ren.75
 
 
@@ -67,19 +66,10 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 # friends: [
 #     {
-#         title: "Hux Blog",
-#         href: "http://huangxuan.me"
-#     },{
 #         title: "Foo",
 #         href: "#"
 #     },{
 #         title: "Bar",
-#         href: "#"
-#     },{
-#         title: "Example Friends",
-#         href: "#"
-#     },{
-#         title: "It helps SEO",
 #         href: "#"
 #     }
 # ]
