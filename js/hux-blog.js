@@ -80,3 +80,14 @@ jQuery(document).ready(function($) {
         })
     }
 });
+
+$(document).ready(function () {
+    // Unsplash image loader
+    var height = 900;
+    var width = 1600;
+    var img = new Image();
+    img.src = 'https://source.unsplash.com/' + width + 'x' + height + '/?nature';
+    img.onload = function () {
+        document.getElementsByClassName("intro-header").item(0).style.backgroundImage = "url(" + img.src + ")";
+    }
+})
