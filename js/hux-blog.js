@@ -59,4 +59,24 @@ jQuery(document).ready(function($) {
                 this.previousTop = currentTop;
             });
     }
+    else {
+        window.addEventListener("touchmove", function () {
+            var headerHeight = $('header').height();
+            var currentTop = $(window).scrollTop();
+                //check if user is scrolling up
+            // console.log("prev=" + this.previousTop + " curr=" + currentTop);
+            if (currentTop < this.previousTop) {
+                //if scrolling up...
+                if (!$('nav').is(':visible')) {
+                    $('nav').fadeIn(100);
+                }
+                if (currentTop > headerHeight) $('nav').addClass('bg-dark');
+                else $('nav').removeClass('bg-dark')
+            } else if (currentTop > this.previousTop) {
+                //if scrolling down...
+                if (currentTop > headerHeight && $('nav').is(':visible')) $('nav').fadeOut(100);
+            }
+            this.previousTop = currentTop;
+        })
+    }
 });
